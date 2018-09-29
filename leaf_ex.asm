@@ -11,6 +11,7 @@ main:
   syscall
   li $v0, 10
   syscall
+
 leaf_example:
   addi, $sp, $sp, -12
   # save local variable
@@ -21,6 +22,7 @@ leaf_example:
   add $t1, $a2, $a3
   sub $s0, $t0, $t1
   add $v0, $s0, $zero
+  # restore local variable
   lw $s0, ($sp)
   lw $t0, 4($sp)
   lw $t1, 8($sp)
